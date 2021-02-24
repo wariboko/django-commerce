@@ -1,0 +1,27 @@
+body {
+    padding: 10px;
+}
+
+.headingCenter {
+    text-align: center;
+    color: cornflowerblue;
+}
+
+.watchlist {
+    display: inline-block;
+    position: relative;
+    float: right;
+    margin: 10px;
+    border: none;
+    background-color: antiquewhite;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.item_title {
+    display: inline-block;
+    position: relative;
+    margin: 10px;
+
+}

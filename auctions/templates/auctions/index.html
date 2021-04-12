@@ -1,34 +1,30 @@
 {% extends "auctions/layout.html" %}
 
 {% block body %}
-    <h2>Active Listings</h2>
-    <div>
+{% include "auctions/slider.html" %}
+    <div id="container">
+        <div class="row">
             {% for auction in auctions %}
             {%if auction.active == "Active" %}
-            <div class="card-deck">
-                <div class="card" style="width: 18rem;">
+            <div class="col-3 pr-2 mb-4">
+                <div class="listing">
+                    <h4 class=" col-12 pl-10"> {{auction.title}} </h4><br>
                     <div>
-                        <button class="watchlist">Add to Watchlist</button>
-                        <h3 class="item_title"> {{auction.title}} </h3><br>
-                        <img class="card-img-top" src="{{auction.image.url}}" alt="" width="300"> 
+                        <img  src="{{auction.image.url}}" alt=""  width="300" height="200"> 
                     </div>
                     <br>
-                    <div class="card-body">
-                        <strong>Description</strong>
-                       <div>{{auction.description}}</div> 
-                       <br>
-                       <strong>Price</strong>
-                       <div>{{auction.price}}</div>
-                       
+                    <div class="row"> 
+                        <p class="col-6 ml-2">${{auction.price}}</p>
+                        <button class="btn btn-light col-5 pr-2">Add to cart</button>
                     </div>
+                    <br>
                 </div>
             </div>
-           
-            <br>
             {%endif%}
             {%endfor%}
+        </div>
+        
     </div>
-    
- 
-    
+    <br>
+                              
 {% endblock %}

@@ -1,23 +1,23 @@
-body {
+.body {
     padding: 10px;
 }
 
 .headingCenter {
     text-align: center;
-    color: cornflowerblue;
+    color: white;
+    font-family: sans-serif;
 }
 
-.watchlist {
-    display: inline-block;
-    position: relative;
-    float: right;
-    margin: 10px;
-    border: none;
-    background-color: antiquewhite;
-    padding: 5px 15px;
-    border-radius: 5px;
-    font-size: 14px;
+.decoration{
+    text-decoration: none;
+    list-style-type: none;
 }
+
+.menu-item :hover {
+    background-color: pink;
+    color: bisque;
+  }
+
 
 .item_title {
     display: inline-block;
@@ -25,3 +25,55 @@ body {
     margin: 10px;
 
 }
+
+.listing {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+img {
+    padding: 15px 15px;
+    border-radius: 30px;
+}
+.marketing {
+    margin-top: 39px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+
+  .marketing h2 {
+    font-weight: 400;
+    text-align: center;
+  }
+
+
+.text-decoration {
+    text-decoration: none;
+    position: relative;
+    padding: 0px 25px;
+    display: inline-block;
+    width: 100%;
+    color: black;
+}
+
+.img-container {
+    width: 100px;
+height: 100px;
+border-radius: 50%;
+background-image: url(../icon.png);
+align-self: center;
+}
+
+.category-container {
+    display: flex;
+    position: relative;
+    width: 11%;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+

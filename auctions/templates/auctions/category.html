@@ -1,12 +1,63 @@
 {% extends "auctions/layout.html" %}
 
 {%block body%}
-<ul >
-    {% for cat in category%}
-     <li value="{{cat.id}}">
-         <a href="{% url 'Category_list' category_id=cat.id %}">{{cat}}</a>
-        </li>
+{% include "auctions/slider.html" %}
+
+<h2 style='text-align:center;'>Categories</h2>
+
+<div class="marketing container">
+        {% for cat in category%}
+            <div class="category-container">
+                <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>  -->
+                    <div class="img-container">
+                        <i class="fa fa-car" aria-hidden="true"></i>
+                    </div>
+                   <a class="text-decoration" value="{{cat.id}}" href="{% url 'Category_list' category_id=cat.id %}">{{cat}}</a>
+
+            </div>  
+            {%endfor%}
+</div>
+<hr>
+
+{% if message  %}
+
+<div class="alert alert-danger">
+
+    {{message}}
+
+</div>
+
+{%endif%}
+<div class="container mb-5">
+    {% for product in products%}
+
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <li style="text-align: right;">{{product.active}}</li>
+                <div >
+                    <h2>{{product.title}} </h2><br>
+                </div>
+                
+                <div>
+                        Description
+                    <li>{{product.description}}</li>
+                </div>
+                <div>
+                    Seller
+                    <li>{{product.seller}}</li>
+                </div>
+                
+            </div>
+            <div class="col-md-5">
+                <img src="{{product.image.url}}" alt="" width="500" height="500"> 
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
     {%endfor%}
-</ul>
+
+</div>
 
 {%endblock%}

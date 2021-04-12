@@ -84,32 +84,29 @@ def Create_listing(request):
         return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "auctions/create.html",{
+            "auctions":Auction.objects.all(),
             "categories": Category.objects.all()
         })
 def Category_view(request):
     return render(request,"auctions/category.html",{
+        "auctions":Auction.objects.all(),
         "category": Category.objects.all()
     })
+
 
 def Category_list(request,category_id):
     products = Auction.objects.filter(selectcategory=category_id)
     if len(products) >= 1:
-        return render(request, "auctions/category_list.html",{
-        "products": products,
+        return render(request, "auctions/category.html",{
+        "auctions":Auction.objects.all(),
+        "products": products
     })
 
     else:
-        return render(request, "auctions/category_list.html",{
+        return render(request, "auctions/category.html",{
         "message": "No listings found!"
     })
 
-def Place_bid(request):
-    pass
-
-def User_comment(request):
-    pass
-
-@login_required
 def User_watchlist(request):
     show_products = Watchlist.objects.filter(user = request.user)
     if show_products:
@@ -120,15 +117,16 @@ def User_watchlist(request):
         return render(request, "auctions/watchlist.html", {
             'message': 'Empty'
         })
-
-@login_required
+'''
 def addWatchlist(request, id):
-    q = Auction.objects.get(id = id)
-    Watchlist.objects.create(user = request.user, product_id = q)
+    q = Auction.objects.get(pk = id)
+    Watchlist.objects.create(user= request.user, product_id = q)
+    return HttpResponseRedirect(reverse('index'))
+    
+def remove_watchlist(request, id):
+    q = Watchlist.objects.filter(product.id).delete()
     return HttpResponseRedirect(reverse("index"))
-
-
-
+'''
           
 
 

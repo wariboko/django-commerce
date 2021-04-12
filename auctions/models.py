@@ -8,6 +8,7 @@ from django.conf.urls.static import static
 
 
 class User(AbstractUser):
+    id = models.AutoField(primary_key=True)
     pass
 
 class Category(models.Model):
@@ -40,7 +41,7 @@ class Auction(models.Model):
         return f"{self.seller}, {self.title}, {self.description}, {self.active}, {self.price}, {self.date},{self.active}, {self.image}"
 
 class Bid(models.Model):
-    
+    id = models.AutoField(primary_key=True)
     buyer = models.ForeignKey(User, on_delete=models.CASCADE, related_name="buyer_name")
     product_id = models.ForeignKey(Auction, on_delete=models.CASCADE, related_name="product_bids")
     product_price = models.IntegerField()
@@ -50,7 +51,7 @@ class Bid(models.Model):
         return f"{self.buyer}, {self.product_price}, {self.date}"
 
 class Comment(models.Model):
-    
+    id = models.AutoField(primary_key=True)
     product_id = models.ForeignKey(Auction, on_delete=models.CASCADE, related_name="product_comments")
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user")
     date = models.DateTimeField(auto_now_add=True)
@@ -65,4 +66,4 @@ class Watchlist(models.Model):
     product_id = models.ForeignKey(Auction, on_delete=models.CASCADE, related_name="product_watchlist")
 
     def __str__(self):
-        return f"{self.user}, {self.product_id}, {self.id}"
+        return f"{self.user}, {self.product_id}"

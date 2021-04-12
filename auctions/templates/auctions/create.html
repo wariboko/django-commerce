@@ -1,7 +1,10 @@
 {% extends "auctions/layout.html" %}
 
-{% block body %}
 
+
+{% block body %}
+{% include "auctions/slider.html" %}
+<hr>
 {% if message %}
 <div>{{ message }}</div>
 {% endif %}

@@ -1,20 +1,54 @@
 from django.contrib.auth import authenticate, login, logout
 from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.urls import reverse
-from .models import User,Auction,Category,Bid
+from .models import *
 from django.core.files.storage import FileSystemStorage
 import os, os.path
-from .models import User
+import logging
+
+
+logging.basicConfig(filename='user.log',level=logging.INFO,
+    format='%(asctime)s:%(levelname)s:%(message)s')
+
+logging.basicConfig(filename='user.log',level=logging.WARNING,
+    format='%(asctime)s:%(levelname)s:%(message)s')
+'''
+DEBUG 
+
+Detailed information, typically of interest only when diagnosing problems.
+
+INFO
+	
+
+Confirmation that things are working as expected.
+
+WARNING
+	
+An indication that something unexpected happened, or indicative of some problem in the near future (e.g. ‘disk space low’). The software is still working as expected.
+
+ERROR
+	
+Due to a more serious problem, the software has not been able to perform some function.
+
+CRITICAL
+
+A serious error, indicating that the program itself may be unable to continue running.
+'''
+
 
 
 def index(request):
     return render(request, "auctions/index.html",{
-        "auctions":Auction.objects.all(),
+        "auctions": Auction.objects.all(),
     })
 
-
+def indexItem(request, auction_id):
+    product = Auction.objects.get(pk = auction_id)
+    return render(request, "auctions/index_view.html",{
+        'product': product,
+    })
 
 def login_view(request):
     if request.method == "POST":
@@ -27,8 +61,10 @@ def login_view(request):
         # Check if authentication successful
         if user is not None:
             login(request, user)
+            logging.info(f'{username} logged in.')
             return HttpResponseRedirect(reverse("index"))
         else:
+            logging.warning(f'{username} logged in Invalid username and/or password..')
             return render(request, "auctions/login.html", {
                 "message": "Invalid username and/or password."
             })
@@ -50,6 +86,9 @@ def register(request):
         password = request.POST["password"]
         confirmation = request.POST["confirmation"]
         if password != confirmation:
+
+            logging.warning(f'{username}-{email}typed in an incorrect password!')
+            
             return render(request, "auctions/register.html", {
                 "message": "Passwords must match."
             })
@@ -58,7 +97,9 @@ def register(request):
         try:
             user = User.objects.create_user(username, email, password)
             user.save()
+            logging.info(f'{username}-{email} just signed up!')
         except IntegrityError:
+            logging.warning(f'{username} already taken')
             return render(request, "auctions/register.html", {
                 "message": "Username already taken."
             })
@@ -67,7 +108,7 @@ def register(request):
     else:
         return render(request, "auctions/register.html")
 
-def Create_listing(request):
+def createListing(request):
     if request.method == "POST":
         product = Auction()
         category = Category.objects.get(id=int(request.POST["category"]))
@@ -87,14 +128,14 @@ def Create_listing(request):
             "auctions":Auction.objects.all(),
             "categories": Category.objects.all()
         })
-def Category_view(request):
+def categoryView(request):
     return render(request,"auctions/category.html",{
         "auctions":Auction.objects.all(),
         "category": Category.objects.all()
     })
 
 
-def Category_list(request,category_id):
+def categoryList(request,category_id):
     products = Auction.objects.filter(selectcategory=category_id)
     if len(products) >= 1:
         return render(request, "auctions/category.html",{
@@ -107,26 +148,33 @@ def Category_list(request,category_id):
         "message": "No listings found!"
     })
 
-def User_watchlist(request):
-    show_products = Watchlist.objects.filter(user = request.user)
-    if show_products:
+def watchlist(request):
+    product_watchlist = Watchlist.objects.all().select_related('product_id')
+    if product_watchlist:
         return render(request, "auctions/watchlist.html", {
-            'liked_products': show_products
+            'product_watchlist': product_watchlist
         })
     else:
         return render(request, "auctions/watchlist.html", {
-            'message': 'Empty'
+            "message": "Empty"
         })
-'''
-def addWatchlist(request, id):
-    q = Auction.objects.get(pk = id)
-    Watchlist.objects.create(user= request.user, product_id = q)
-    return HttpResponseRedirect(reverse('index'))
-    
-def remove_watchlist(request, id):
-    q = Watchlist.objects.filter(product.id).delete()
-    return HttpResponseRedirect(reverse("index"))
-'''
+
+def addWatchlist(request, auction_id):
+    query = Auction.objects.get(pk = auction_id)
+    Watchlist.objects.create(user = request.user, product_id = query)
+    return redirect(watchlist)
+   
+def remove_watchlist(request, auction_id):
+    query = Watchlist.objects.filter(user = request.user, product_id = auction_id)
+    print(query)
+    if query:
+
+        query.delete()
+
+    return HttpResponseRedirect(reverse("watchlist"))
+
+
+
           
 
 

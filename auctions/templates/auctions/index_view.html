@@ -1,0 +1,43 @@
+{% extends "auctions/layout.html" %}
+
+{%block body%}
+
+<div class="container margin-bottom">
+    
+    <div class="row featurette">
+        <div class="col-md-7">
+            <li style="text-align: right;">{{product.active}}</li>
+            <div >
+                <h2>{{product.title}} </h2><br>
+            </div>
+            
+            <div>
+                    Description
+                <p>{{product.description}}</p>
+            </div>
+
+            <div>
+                Price
+                <p class="col-6 ml-2">${{product.price}}</p>
+            </div>
+
+            <div>
+                Seller
+                <p class="col-6 ml-2">{{product.seller}}</p>
+            </div>
+
+        </div>
+        <div class="col-md-5">
+            <img src="{{product.image.url}}" alt="" width="500" height="500"> 
+        </div>
+        <div>
+            <a href="{% url 'addWatchlist' auction_id=product.id %}" class="btn btn-light col-2 pr-2">Add to Watchlist</a>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+
+</div>
+
+{% endblock %}

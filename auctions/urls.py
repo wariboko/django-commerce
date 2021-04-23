@@ -7,9 +7,12 @@ urlpatterns = [
     path("login", views.login_view, name="login"),
     path("logout", views.logout_view, name="logout"),
     path("register", views.register, name="register"),
-    path('Create_listing', views.Create_listing, name='Create_listing'),
-    path('Category_view', views.Category_view, name='Category_view'),
-   path("<str:category_id>", views.Category_list, name='Category_list'),
-   path("Watchlist", views.User_watchlist, name="User_watchlist"),
+    path('createListing', views.createListing, name='createListing'),
+    path('categoryView', views.categoryView, name='categoryView'),
+   path("categoryList/<str:category_id>", views.categoryList, name='categoryList'),
+   path("addWatchlist/<int:auction_id>", views.addWatchlist, name="addWatchlist"),
+   path("watchlist", views.watchlist, name="watchlist"),
+   path("remove_watchlist/<int:auction_id>", views.remove_watchlist, name="remove_watchlist"),
+   path("indexItem/<int:auction_id>", views.indexItem, name="indexItem")
    
 ]

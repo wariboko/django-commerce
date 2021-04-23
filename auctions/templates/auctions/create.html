@@ -8,9 +8,9 @@
 {% if message %}
 <div>{{ message }}</div>
 {% endif %}
-    <div class="text-left">
+    <div class="margin-bottom">
 
-        <form action="{% url 'Create_listing' %}" method="POST" enctype=multipart/form-data>
+        <form action="{% url 'createListing' %}" method="POST" enctype=multipart/form-data>
             {% csrf_token %}
             <div class="form-group">
                 <input class="form-control" autofocus type="text" name="title" placeholder="Title">

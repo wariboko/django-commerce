@@ -1,37 +1,39 @@
 {% extends "auctions/layout.html" %}
 
 {%block body%}
-{% include "auctions/slider.html" %}
 
+{% include "auctions/slider.html" %}
 <h2 style='text-align:center;'>Categories</h2>
 
+
 <div class="marketing container">
+    {%if message%}
+    <script >
+
+    </script>
+    <div class="alert alert-success" role="alert">
+    
+        {{message}}
+    
+    </div>
+    {% endif %}
         {% for cat in category%}
             <div class="category-container">
                 <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>  -->
                     <div class="img-container">
                         <i class="fa fa-car" aria-hidden="true"></i>
                     </div>
-                   <a class="text-decoration" value="{{cat.id}}" href="{% url 'Category_list' category_id=cat.id %}">{{cat}}</a>
+                   <a class="text-decoration" value="{{cat.id}}" href="{% url 'categoryList' category_id=cat.id %}">{{cat}}</a>
 
             </div>  
             {%endfor%}
 </div>
 <hr>
 
-{% if message  %}
-
-<div class="alert alert-danger">
-
-    {{message}}
-
-</div>
-
-{%endif%}
-<div class="container mb-5">
+ 
+    
+<div class="container margin-bottom">
     {% for product in products%}
-
-
         <div class="row featurette">
             <div class="col-md-7">
                 <li style="text-align: right;">{{product.active}}</li>
@@ -47,10 +49,13 @@
                     Seller
                     <li>{{product.seller}}</li>
                 </div>
-                
+
             </div>
             <div class="col-md-5">
                 <img src="{{product.image.url}}" alt="" width="500" height="500"> 
+            </div>
+            <div>
+                <a href="{% url 'addWatchlist' auction_id=product.id %}" class="btn btn-light col-2 pr-2">Add to Watchlist</a>
             </div>
         </div>
 

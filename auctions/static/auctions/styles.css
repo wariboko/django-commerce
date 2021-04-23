@@ -1,5 +1,6 @@
 .body {
     padding: 10px;
+    margin-bottom: 200px;
 }
 
 .headingCenter {
@@ -31,12 +32,24 @@
     transition: 0.3s;
     width: 100%;
     border-radius: 10px;
+    
   }
   
 img {
     padding: 15px 15px;
-    border-radius: 30px;
+    align-self:auto;
 }
+
+.center-align {
+    display: flex;
+    justify-content: center;
+}
+.center-align > img {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
 .marketing {
     margin-top: 39px;
     display: flex;
@@ -61,11 +74,12 @@ img {
 }
 
 .img-container {
-    width: 100px;
+width: 100px;
 height: 100px;
 border-radius: 50%;
-background-image: url(../icon.png);
+background: url(../icon.png) no-repeat center;
 align-self: center;
+background-size: contain;
 }
 
 .category-container {
@@ -77,3 +91,32 @@ align-self: center;
     justify-content: center;
 }
 
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-top: 50px;
+    display: inline-block;
+   
+}
+   
+
+#container {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 200px;
+}
+
+.margin-bottom {
+    margin-bottom: 200px;
+}
+
+
+/* respensive */
+
+@media only screen and (max-width: 600px) {
+    .category-container {
+        width: 25%;
+    }
+  }

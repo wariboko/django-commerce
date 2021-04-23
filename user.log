@@ -1,0 +1,536 @@
+2021-04-21 19:03:46,567:WARNING:Not Found: /favicon.ico
+2021-04-21 19:04:13,457:WARNING:eliza already taken
+2021-04-21 19:04:41,189:INFO:whatever-whatever@gmail.com just signed up!
+2021-04-21 20:51:56,454:INFO:/home/david/Desktop/Commerce/auctions/views.py changed, reloading.
+2021-04-22 06:25:42,653:INFO:/home/david/Desktop/Commerce/auctions/views.py changed, reloading.
+2021-04-22 06:26:03,034:WARNING:Not Found: /favicon.ico
+2021-04-22 06:26:07,126:ERROR:Internal Server Error: /login
+Traceback (most recent call last):
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/david/Desktop/Commerce/auctions/views.py", line 37, in login_view
+    logging.info(f)
+NameError: name 'logging' is not defined
+2021-04-22 06:26:49,941:INFO:/home/david/Desktop/Commerce/auctions/functions.py changed, reloading.
+2021-04-22 06:28:58,474:ERROR:Internal Server Error: /login
+Traceback (most recent call last):
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/david/Desktop/Commerce/auctions/views.py", line 68, in login_view
+    logging.info(f)
+NameError: name 'f' is not defined
+2021-04-22 06:28:58,742:WARNING:Not Found: /favicon.ico
+2021-04-22 06:29:27,025:INFO:/home/david/Desktop/Commerce/auctions/views.py changed, reloading.
+2021-04-22 06:29:33,305:INFO:david logged in.
+2021-04-22 06:29:33,602:WARNING:Not Found: /favicon.ico
+2021-04-22 06:30:46,541:INFO:/home/david/Desktop/Commerce/auctions/views.py changed, reloading.
+2021-04-22 06:30:50,007:INFO:AnonymousUser logged out.
+2021-04-22 06:30:50,296:WARNING:Not Found: /favicon.ico
+2021-04-22 06:31:11,465:INFO:/home/david/Desktop/Commerce/auctions/views.py changed, reloading.
+2021-04-22 06:31:16,461:INFO:david logged in.
+2021-04-22 06:31:16,699:WARNING:Not Found: /favicon.ico
+2021-04-22 06:31:26,072:INFO: logged out.
+2021-04-22 06:31:26,312:WARNING:Not Found: /favicon.ico
+2021-04-22 06:32:19,884:INFO:/home/david/Desktop/Commerce/auctions/views.py changed, reloading.
+2021-04-22 06:32:22,984:WARNING:Not Found: /favicon.ico
+2021-04-22 06:32:24,728:INFO:david logged in.
+2021-04-22 06:32:25,028:WARNING:Not Found: /favicon.ico
+2021-04-22 06:32:26,797:ERROR:Internal Server Error: /logout
+Traceback (most recent call last):
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/david/Desktop/Commerce/auctions/views.py", line 73, in logout_view
+    user = authenticate(request, username=username)
+NameError: name 'username' is not defined
+2021-04-22 06:33:04,076:INFO:/home/david/Desktop/Commerce/auctions/views.py changed, reloading.
+2021-04-22 06:33:08,284:ERROR:Internal Server Error: /logout
+Traceback (most recent call last):
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/utils/datastructures.py", line 76, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/david/Desktop/Commerce/auctions/views.py", line 72, in logout_view
+    username = request.GET["username"]
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/utils/datastructures.py", line 78, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'username'
+2021-04-22 06:33:48,095:INFO:/home/david/Desktop/Commerce/auctions/views.py changed, reloading.
+2021-04-22 06:33:58,287:WARNING:Not Found: /favicon.ico
+2021-04-23 13:58:30,730:WARNING:Not Found: /favicon.ico
+2021-04-23 13:59:07,376:INFO:david logged in.
+2021-04-23 14:42:23,726:ERROR:Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/david/Desktop/Commerce/auctions/views.py", line 44, in index
+    return render(request, "auctions/index.html",{
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader_tags.py", line 278, in do_extends
+    nodelist = parser.parse()
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader_tags.py", line 216, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/defaulttags.py", line 814, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/defaulttags.py", line 965, in do_if
+    nodelist = parser.parse(('elif', 'else', 'endif'))
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 449, in parse
+    raise self.error(token, e)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 447, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 662, in __init__
+    raise TemplateSyntaxError("Could not parse the remainder: '%s' "
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '% url 'Category_list' auction_id=product.id %' from '% url 'Category_list' auction_id=product.id %'
+2021-04-23 15:39:10,588:INFO:/home/david/Desktop/Commerce/auctions/urls.py changed, reloading.
+2021-04-23 15:39:12,307:INFO:/home/david/Desktop/Commerce/auctions/views.py changed, reloading.
+2021-04-23 15:39:54,172:INFO:/home/david/Desktop/Commerce/auctions/views.py changed, reloading.
+2021-04-23 15:42:38,757:WARNING:Not Found: /favicon.ico
+2021-04-23 15:42:39,620:WARNING:Not Found: /favicon.ico
+2021-04-23 15:43:31,928:ERROR:Internal Server Error: /index_view
+Traceback (most recent call last):
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/david/Desktop/Commerce/auctions/views.py", line 173, in index_view
+    return render(request, "auctions/index_view.html")
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader_tags.py", line 278, in do_extends
+    nodelist = parser.parse()
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader_tags.py", line 216, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 483, in parse
+    self.unclosed_block_tag(parse_until)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 544, in unclosed_block_tag
+    raise self.error(token, msg)
+django.template.exceptions.TemplateSyntaxError: Unclosed tag on line 3: 'block'. Looking for one of: endblock.
+2021-04-23 15:55:41,016:INFO:/home/david/Desktop/Commerce/auctions/views.py changed, reloading.
+2021-04-23 16:00:16,144:INFO:/home/david/Desktop/Commerce/auctions/views.py changed, reloading.
+2021-04-23 16:00:26,678:ERROR:Internal Server Error: /index_view
+Traceback (most recent call last):
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: index_view() missing 1 required positional argument: 'auction_id'
+2021-04-23 16:01:09,264:INFO:/home/david/Desktop/Commerce/auctions/urls.py changed, reloading.
+2021-04-23 16:01:12,573:WARNING:Not Found: /index_view
+2021-04-23 16:03:04,509:ERROR:Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/david/Desktop/Commerce/auctions/views.py", line 43, in index
+    return render(request, "auctions/index.html",{
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader_tags.py", line 278, in do_extends
+    nodelist = parser.parse()
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader_tags.py", line 216, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/defaulttags.py", line 814, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/defaulttags.py", line 965, in do_if
+    nodelist = parser.parse(('elif', 'else', 'endif'))
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/defaulttags.py", line 1389, in url
+    args.append(parser.compile_filter(value))
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 662, in __init__
+    raise TemplateSyntaxError("Could not parse the remainder: '%s' "
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '=' from 'auction_id='
+2021-04-23 16:03:38,243:ERROR:Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/david/Desktop/Commerce/auctions/views.py", line 43, in index
+    return render(request, "auctions/index.html",{
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/defaulttags.py", line 211, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/defaulttags.py", line 312, in render
+    return nodelist.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/urls/resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'index_view' with no arguments not found. 1 pattern(s) tried: ['index_view/(?P<auction_id>[0-9]+)$']
+2021-04-23 16:04:03,566:ERROR:Internal Server Error: /index_view/1
+Traceback (most recent call last):
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/david/Desktop/Commerce/auctions/views.py", line 50, in index_view
+    'query': products,
+NameError: name 'products' is not defined
+2021-04-23 16:04:44,055:INFO:/home/david/Desktop/Commerce/auctions/views.py changed, reloading.
+2021-04-23 16:04:45,428:ERROR:Internal Server Error: /index_view/1
+Traceback (most recent call last):
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/david/Desktop/Commerce/auctions/views.py", line 49, in index_view
+    return render(request, "auctions/index_view.html",{
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader_tags.py", line 195, in render
+    return template.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 172, in render
+    return self._render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/defaulttags.py", line 167, in render
+    values = list(values)
+TypeError: 'Auction' object is not iterable
+2021-04-23 16:05:41,184:INFO:/home/david/Desktop/Commerce/auctions/views.py changed, reloading.
+2021-04-23 16:08:08,310:INFO:/home/david/Desktop/Commerce/auctions/urls.py changed, reloading.
+2021-04-23 16:08:10,860:WARNING:Not Found: /index_view/12
+2021-04-23 16:08:17,035:INFO:/home/david/Desktop/Commerce/auctions/urls.py changed, reloading.
+2021-04-23 16:22:46,199:WARNING:Not Found: /favicon.ico
+2021-04-23 16:22:56,312:WARNING:Not Found: /favicon.ico
+2021-04-23 17:13:16,715:INFO:/home/david/Desktop/Commerce/auctions/urls.py changed, reloading.
+2021-04-23 17:13:57,629:INFO:/home/david/Desktop/Commerce/auctions/views.py changed, reloading.
+2021-04-23 17:15:12,820:INFO:/home/david/Desktop/Commerce/auctions/urls.py changed, reloading.
+2021-04-23 17:15:34,641:INFO:/home/david/Desktop/Commerce/auctions/views.py changed, reloading.
+2021-04-23 17:17:56,362:INFO:/home/david/Desktop/Commerce/auctions/urls.py changed, reloading.
+2021-04-23 17:18:06,653:ERROR:Internal Server Error: /createListing
+Traceback (most recent call last):
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/david/Desktop/Commerce/auctions/views.py", line 126, in createListing
+    return render(request, "auctions/create.html",{
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/urls/resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'Create_listing' not found. 'Create_listing' is not a valid view function or pattern name.
+2021-04-23 17:20:08,156:INFO:/home/david/Desktop/Commerce/auctions/views.py changed, reloading.
+2021-04-23 17:21:22,236:INFO:/home/david/Desktop/Commerce/auctions/views.py changed, reloading.
+2021-04-23 17:21:24,478:ERROR:Internal Server Error: /createListing
+Traceback (most recent call last):
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/david/Desktop/Commerce/auctions/views.py", line 126, in createListing
+    return render(request, "auctions/create.html",{
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/urls/resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'Create_listing' not found. 'Create_listing' is not a valid view function or pattern name.
+2021-04-23 17:25:50,309:ERROR:Internal Server Error: /createListing
+Traceback (most recent call last):
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/david/Desktop/Commerce/auctions/views.py", line 126, in createListing
+    return render(request, "auctions/create.html",{
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/david/Desktop/Commerce/env/lib/python3.8/site-packages/django/urls/resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'Create_listing' not found. 'Create_listing' is not a valid view function or pattern name.
+2021-04-23 17:27:10,438:WARNING:Not Found: /favicon.ico
+2021-04-23 17:28:18,743:INFO:/home/david/Desktop/Commerce/auctions/views.py changed, reloading.
+2021-04-23 17:28:42,417:INFO:/home/david/Desktop/Commerce/auctions/urls.py changed, reloading.
+2021-04-23 17:28:49,107:WARNING:Not Found: /index_view/1
+2021-04-23 17:29:08,011:WARNING:Not Found: /index_view/1
+2021-04-23 17:29:18,505:WARNING:Not Found: /index_view/1
+2021-04-23 17:30:22,867:WARNING:Not Found: /index_view/1
+2021-04-23 17:30:23,485:WARNING:Not Found: /index_view/1
+2021-04-23 17:30:30,173:WARNING:Not Found: /favicon.ico
+2021-04-23 17:30:37,430:WARNING:Not Found: /favicon.ico
+2021-04-23 17:43:56,389:WARNING:Not Found: /favicon.ico
+2021-04-23 18:08:57,625:INFO:david logged in.
+2021-04-23 18:10:18,957:INFO:/home/david/Desktop/Commerce/auctions/views.py changed, reloading.
+2021-04-23 18:10:27,573:INFO:/home/david/Desktop/Commerce/auctions/views.py changed, reloading.
+2021-04-23 18:10:37,646:WARNING:david logged in Invalid username and/or password..
+2021-04-23 18:10:58,930:INFO:david logged in.

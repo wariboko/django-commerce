@@ -17,7 +17,7 @@ body {
     background-size: cover;
     
     /* Pick a solid background color that will be displayed while the background image is loading */
-    background-color:whitesmoke;
+    background-color:white;
 
     background-blend-mode: hard-light;
     

@@ -13,6 +13,7 @@ urlpatterns = [
    path("addWatchlist/<int:auction_id>", views.addWatchlist, name="addWatchlist"),
    path("watchlist", views.watchlist, name="watchlist"),
    path("remove_watchlist/<int:auction_id>", views.remove_watchlist, name="remove_watchlist"),
-   path("indexItem/<int:auction_id>", views.indexItem, name="indexItem")
+   path("indexItem/<int:auction_id>", views.indexItem, name="indexItem"),
+   path('PostImage/<int:auction_id>', views.PostImage, name="PostImage")
    
 ]

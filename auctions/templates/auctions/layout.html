@@ -30,12 +30,12 @@
                             <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
                           </a>
                         
-                            <a class="nav-link px-2 text-white" href="{% url 'index' %}">Active Listings</a>
+                            <a class="nav-link px-2 text-white" href="{% url 'index' %}">Listings</a>
                         
             
                         {% if user.is_authenticated %}
                            
-                                <a class="nav-link px-2 text-white" href="{% url 'createListing' %}">Create-Listing</a>
+                                <a class="nav-link px-2 text-white" href="{% url 'createListing' %}">Upload</a>
                            
                             
                                 <a class="nav-link px-2 text-white" href="{% url 'categoryView' %}">Categories</a>

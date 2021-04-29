@@ -1,12 +1,13 @@
 from django.contrib.auth import authenticate, login, logout
 from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from .models import *
 from django.core.files.storage import FileSystemStorage
 import os, os.path
 import logging
+from django.contrib import messages
 
 
 logging.basicConfig(filename='user.log',level=logging.INFO,
@@ -14,40 +15,19 @@ logging.basicConfig(filename='user.log',level=logging.INFO,
 
 logging.basicConfig(filename='user.log',level=logging.WARNING,
     format='%(asctime)s:%(levelname)s:%(message)s')
-'''
-DEBUG 
-
-Detailed information, typically of interest only when diagnosing problems.
-
-INFO
-	
-
-Confirmation that things are working as expected.
-
-WARNING
-	
-An indication that something unexpected happened, or indicative of some problem in the near future (e.g. ‘disk space low’). The software is still working as expected.
-
-ERROR
-	
-Due to a more serious problem, the software has not been able to perform some function.
-
-CRITICAL
-
-A serious error, indicating that the program itself may be unable to continue running.
-'''
-
-
 
 def index(request):
     return render(request, "auctions/index.html",{
         "auctions": Auction.objects.all(),
+        "photos": PostImage.objects.all()
     })
 
 def indexItem(request, auction_id):
     product = Auction.objects.get(pk = auction_id)
+    postImage = PostImage.objects.filter(auction=auction_id)
     return render(request, "auctions/index_view.html",{
         'product': product,
+        'postImage': postImage,
     })
 
 def login_view(request):
@@ -111,6 +91,7 @@ def register(request):
 def createListing(request):
     if request.method == "POST":
         product = Auction()
+        photos = PostImage()
         category = Category.objects.get(id=int(request.POST["category"]))
 
         product.title = request.POST["title"]
@@ -122,18 +103,29 @@ def createListing(request):
         product.selectcategory = category
         product.save()
 
+        photos.auction = Auction.objects.latest('id')
+        images = request.FILES.getlist('images')
+        
+        if images:
+            for image in images:
+                photos = PostImage.objects.create(images=image, auction=photos.auction)
+        
+        photos.save()
         return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "auctions/create.html",{
             "auctions":Auction.objects.all(),
-            "categories": Category.objects.all()
+            "categories": Category.objects.all(),
+            "photos": PostImage.objects.all()
         })
+
+
 def categoryView(request):
     return render(request,"auctions/category.html",{
         "auctions":Auction.objects.all(),
-        "category": Category.objects.all()
+        "category": Category.objects.all(),
+       
     })
-
 
 def categoryList(request,category_id):
     products = Auction.objects.filter(selectcategory=category_id)
@@ -144,9 +136,8 @@ def categoryList(request,category_id):
     })
 
     else:
-        return render(request, "auctions/category.html",{
-        "message": "No listings found!"
-    })
+        
+        return redirect("categoryView")
 
 def watchlist(request):
     product_watchlist = Watchlist.objects.all().select_related('product_id')
